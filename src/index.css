@@ -39,6 +39,11 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-gris-green: hsl(157 96% 17%);
+  --color-gris-red: hsl(360 99% 43%);
+  --color-gris-blue: hsl(204 96% 36%);
+  --color-gris-yellow: hsl(57 93% 49%);
 }
 
 :root {
@@ -116,5 +121,11 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .flex-full {
+    @apply flex-1 flex flex-col;
   }
 }
