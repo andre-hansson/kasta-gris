@@ -4,14 +4,14 @@ import type { ScoreKey } from '@/types';
 
 type Props = Score & { type: ScoreKey; onClick: (score: number) => void };
 export const ScoreButton = (props: Props) => {
-  const { name, points, double, onClick } = props;
+  const { name, points, double, onClick, type } = props;
   const [stage, setState] = useState<'score' | 'type'>('score');
 
   return (
     <div className="flex flex-1 justify-center rounded-sm bg-gris-blue shadow-sm">
       {stage === 'score' && (
         <button
-          className="w-full h-full text-white px-4 py-4 rounded-sm"
+          className="w-full h-full flex justify-center text-white px-4 py-0 rounded-sm overflow-hidden"
           onClick={() => {
             if (double) {
               setState('type');
@@ -20,7 +20,7 @@ export const ScoreButton = (props: Props) => {
             }
           }}
         >
-          {name} ({points})
+          <img src={`/${type}.png`} alt={name} className="h-[100px]" />
         </button>
       )}
       {stage === 'type' && (
